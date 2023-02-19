@@ -72,4 +72,10 @@ class UserController extends Controller
         return redirect()->route('users.index');
     }
 
+    public function delete($id){
+        if($user = User::find($id)){
+            $user->delete($id);
+        }
+        return redirect()->route('users.index');
+    }
 }
